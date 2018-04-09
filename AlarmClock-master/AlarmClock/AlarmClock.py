@@ -1,6 +1,7 @@
 from time import strftime, sleep
 from datetime import datetime, timedelta
 import re
+from playsound import playsound
 
 # A simple clock where it plays a sound after X number of minutes/seconds or at a particular time.
 
@@ -25,6 +26,9 @@ def alarm(clock, alert_time):
         sleep(1)
         if clock.time() == alert_time:
             print("WAKE UP\n")
+            for x in range(3):
+                playsound("file://C:/Users/mpeixoto/Documents/repos/AlarmClock-master/AlarmClock/the-little-dwarf.mp3")
+                pass
             break
         else:
             continue
@@ -39,6 +43,7 @@ def timer(clock, in_time):
         sleep(1)
         if clock.time() == alert_time:
             print("TIME'S UP\n")
+            playsound("file://C:/Users/mpeixoto/Documents/repos/AlarmClock-master/AlarmClock/quite-impressed.mp3")
             break
         else:
             curr_date = datetime.now()
